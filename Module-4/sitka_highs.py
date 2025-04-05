@@ -1,5 +1,5 @@
 # Amanda Wedergren
-# March 31, 2025
+# April 2, 2025
 # Module 4.2 Assignment
 
 import csv
@@ -10,7 +10,7 @@ from matplotlib import pyplot as plt
 import sys
 
 
-# Create a menu.
+
 def display_menu():
     print("Menu:")
     print("1. Highs")
@@ -76,8 +76,9 @@ def lows():
 
     plt.show()
 
-# Get user's choice from the menu.
+
 def main():
+
     while True:
         display_menu()
         choice = input("Please choose daily temperatures to plot or exit (1-3): ")
@@ -91,6 +92,9 @@ def main():
             sys.exit()
         else:
             print("Invalid choice. Please try again.")
+
+
+
 
 
 if __name__ == "__main__":

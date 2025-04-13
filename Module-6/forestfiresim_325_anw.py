@@ -1,8 +1,6 @@
 # Amanda Wedergren
-# April 8, 2025
+# April 12, 2025
 # Module 6.2 Assignment
-
-
 
 """Forest Fire Sim, modified by Sue Sampson, based on a program by Al Sweigart
 A simulation of wildfires spreading in a forest. Press Ctrl-C to stop.
@@ -37,7 +35,8 @@ FIRE_CHANCE = 0.01  # Chance a tree is hit by lightning & burns.
 # (!) Try setting the pause length to 1.0 or 0.0:
 PAUSE_LENGTH = 0.5
 
-# Initialize parameters for the lake
+# Initialize parameters
+
 lake_x = 28
 lake_y = 7
 lake_width = 15
@@ -46,8 +45,10 @@ lake_height = 8
 
 
 def main():
+
     forest = createNewForest()
     bext.clear()
+
 
     while True:  # Main program loop.
         displayForest(forest)
@@ -88,10 +89,13 @@ def main():
 
         time.sleep(PAUSE_LENGTH)
 
-# Create initial forest state.
+
 def createNewForest():
     """Returns a dictionary for a new forest data structure."""
     forest = {'width': WIDTH, 'height': HEIGHT}
+
+    
+
     for x in range(WIDTH):
         for y in range(HEIGHT):
             if (random.random() * 100) <= INITIAL_TREE_DENSITY:
@@ -107,7 +111,6 @@ def place_lake(forest, lake_x, lake_y, lake_width, lake_height):
             if 0 <= x < WIDTH and 0 <= y < HEIGHT:
                 forest[(x, y)] = WATER
 
-# Generate and display the forest.
 def displayForest(forest):
     """Display the forest data structure on the screen."""
     bext.goto(0, 0)
